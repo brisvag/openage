@@ -226,3 +226,17 @@ class DataFormatter:
             file_name, content = gen_file.generate()
             with projectdir[file_name].open('wb') as outfile:
                 outfile.write(content.encode('utf-8'))
+
+    def distribute(self):
+        """
+        Distributes the data to the appropriate collector objects.
+        """
+        sorting_dictionary = {"keys": "destinations"}
+
+        def send_to_destination(datum, destination):
+            pass
+
+        for dataset in self.data:
+            for element in dataset.members:
+                destination = sorting_dictionary{element.key}
+                send_to_destination(element, destination)

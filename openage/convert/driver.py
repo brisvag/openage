@@ -162,6 +162,7 @@ def convert_metadata(args):
     gamespec = get_gamespec(args.srcdir, args.game_versions, args.flag("no_pickle_cache"))
     data_dump = gamespec.dump("gamedata")
     data_formatter.add_data(data_dump[0], prefix="gamedata/", single_output="gamedata")
+    data_formatter.distribute()
 
     yield "blendomatic.dat"
     blend_data = get_blendomatic_data(args.srcdir)

@@ -240,3 +240,4 @@ class DataFormatter:
             for element in dataset.members:
                 destination = sorting_dictionary{element.key}
                 send_to_destination(element, destination)
+
